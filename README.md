@@ -5,4 +5,3 @@ Xamarin.Forms
 MVVM Architecture pattern
 Data-Binding
 Hand coded XAML that simulates Material Design CardView
-
