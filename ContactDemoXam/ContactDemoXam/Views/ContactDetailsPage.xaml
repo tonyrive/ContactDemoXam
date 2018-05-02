@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactDemoXam.Views.ContactDetailsPage"
+             xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="Contant Details">
+
+    <StackLayout Padding="10" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <imageCircle:CircleImage Source="{Binding ContactDetails.Picture}"  
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center"
+                                 Aspect="AspectFill" 
+                                 WidthRequest="150" 
+                                 HeightRequest="150" 
+                                 BorderColor="{StaticResource circle-image-border-color}" 
+                                 BorderThickness="3"
+                                 BackgroundColor="Transparent"
+                                 FillColor="{StaticResource circle-image-color}"/>
+
+        <Label x:Name="FullName" 
+               Text="{Binding ContactDetails.DisplayName}" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+        <Label x:Name="Address"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="{Binding ContactDetails.Address}" />
+
+        <Label x:Name="Address2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="{Binding ContactDetails.Address2}" />
+
+        <Label x:Name="Phone"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="{Binding ContactDetails.Phone}" />
+
+        <Button x:Name="Dial" Text="Call"
+                Command="{Binding CallPhoneCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                IsEnabled="{Binding CanDial}"
+                CornerRadius="10"></Button>
+
+    </StackLayout>
+</ContentPage>

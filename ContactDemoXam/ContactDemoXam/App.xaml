@@ -2,9 +2,31 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ContactDemoXam.App">
-	<Application.Resources>
+    <Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Thickness x:Key="frame-margin-ios">7</Thickness>
+            <Thickness x:Key="frame-margin-android">7</Thickness>
+            <Thickness x:Key="frame-padding-ios">5</Thickness>
+            <Thickness x:Key="frame-padding-android">5</Thickness>
+            <Color x:Key="frame-color">#FFFFFF</Color>
+            <Color x:Key="frame-outline-color-ios">Gray</Color>
+            <Color x:Key="frame-outline-color-android">Gray</Color>
 
-	</Application.Resources>
+            <Color x:Key="list-color">#FFFFFF</Color>
+
+            <Color x:Key="circle-image-color">DarkSlateGray</Color>
+            <Color x:Key="circle-image-border-color">LightGray</Color>
+
+            <Color x:Key="primary-back-title-color">#662d91</Color>
+            <Color x:Key="primary-title-color">#FFFFFF</Color>
+            <!--
+	        <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+	            <Setter Property="BarBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>
+	            <Setter Property="BarTextColor" Value="{StaticResource Key=primary-title-color}"/>
+	        </Style>
+            -->
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>

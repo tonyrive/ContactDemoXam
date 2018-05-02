@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactDemoXam.Views.ContactListPage"
+             xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="Contacts">
+    
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView
+            x:Name="ContactsListView"
+            HasUnevenRows ="True"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
+            CachingStrategy="RecycleElement"
+            AbsoluteLayout.LayoutFlags="All" 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            BackgroundColor="{StaticResource list-color}"
+            SeparatorVisibility="None">
+
+            <ListView.HeaderTemplate>
+
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell StyleId="disclosure">
+
+                        <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="{StaticResource frame-color}" 
+                               CornerRadius="10">
+                            <Frame.OutlineColor>
+                                <OnPlatform x:TypeArguments="Color"
+                                            Android="{StaticResource frame-outline-color-android}"
+                                            iOS="{StaticResource frame-outline-color-ios}"/>
+                            </Frame.OutlineColor>
+                            <Frame.Margin>
+                                <OnPlatform x:TypeArguments="Thickness"
+                                            Android="{StaticResource frame-margin-android}" 
+                                            iOS="{StaticResource frame-margin-ios}"/>
+                            </Frame.Margin>
+                            <Frame.Padding>
+                                <OnPlatform x:TypeArguments="Thickness"
+                                            Android="{StaticResource frame-padding-android}" 
+                                            iOS="{StaticResource frame-padding-ios}"/>
+                            </Frame.Padding>
+
+                            <Grid Padding="2" ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Spacing="4" VerticalOptions="Center">
+                                    <Grid>
+                                        <imageCircle:CircleImage Source="{Binding Picture}"  
+                                                                 VerticalOptions="Center" HorizontalOptions="Center"
+                                                                 Aspect="AspectFill" 
+                                                                 WidthRequest="80" 
+                                                                 HeightRequest="80" 
+                                                                 BorderColor="{StaticResource circle-image-border-color}" 
+                                                                 BorderThickness="3"
+                                                                 BackgroundColor="Transparent"
+                                                                 FillColor="{StaticResource circle-image-color}" />
+                                    </Grid>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding DisplayName}" />
+                                    <Label Text="{Binding Phone}" />
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </AbsoluteLayout>
+</ContentPage>
