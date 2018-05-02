@@ -7,6 +7,7 @@ Data-Binding<br/>
 Hand coded XAML that simulates Material Design CardView<br/>
 <div>
 <img src="ContactList.png" alt="ContactList.png" height="400dp">
+       
   
 <img src="ContactDetails.png" alt="ContactDetails.png" height="400dp">
 </div>
