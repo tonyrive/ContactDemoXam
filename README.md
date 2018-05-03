@@ -1,4 +1,4 @@
-# ContactDemoXam
+# Contact Demo app in Xamarin
 Demo app to demostrate use of Xamarin.<br/>
 
 Xamarin.Forms<br/>
