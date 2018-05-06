@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace ContactDemoXam.Droid
 {
@@ -23,6 +26,14 @@ namespace ContactDemoXam.Droid
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            AppCenter.Start("9660fdb0-7729-4ab0-9b43-8c1caac57d09", 
+                typeof(Analytics), typeof(Crashes));
         }
     }
 }
